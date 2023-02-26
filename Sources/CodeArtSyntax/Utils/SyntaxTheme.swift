@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SyntaxTheme {
+public struct SyntaxTheme {
     let linesCountColor: UIColor
     let backgroundColor: UIColor
     let baseColor: UIColor

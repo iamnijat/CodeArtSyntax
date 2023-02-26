@@ -14,7 +14,7 @@ protocol SyntaxBase {
     func format(text: String, fontSize: CGFloat) -> NSMutableAttributedString
 }
 
-enum Syntax {
+public enum Syntax {
     case SWIFT
 }
 
