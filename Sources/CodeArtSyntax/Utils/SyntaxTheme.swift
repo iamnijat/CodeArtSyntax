@@ -23,7 +23,7 @@ public struct SyntaxTheme {
     
 
     
-    static func vsCodeDark() -> SyntaxTheme {
+    public func vsCodeDark() -> SyntaxTheme {
         return SyntaxTheme(
             linesCountColor: UIColor(hexString: "#ffffff", alpha: 0.7),
             backgroundColor: UIColor(hexString: "#1e1e1e"),
@@ -43,7 +43,7 @@ public struct SyntaxTheme {
     }
     
     
-    static func standard() -> SyntaxTheme {
+    public func standard() -> SyntaxTheme {
        return SyntaxTheme(
         linesCountColor: UIColor(hexString: "#37474f", alpha: 0.7),
         backgroundColor: UIColor(hexString: "#ffffff"),
@@ -59,7 +59,7 @@ public struct SyntaxTheme {
        );
      }
     
-    static func dracula() -> SyntaxTheme {
+    public func dracula() -> SyntaxTheme {
        return SyntaxTheme(
         linesCountColor: UIColor(hexString: "#ffffff", alpha: 0.7),
         backgroundColor: UIColor(hexString: "#263238"),
@@ -76,7 +76,7 @@ public struct SyntaxTheme {
      }
     
     
-    static func ayuLight() -> SyntaxTheme {
+    public func ayuLight() -> SyntaxTheme {
        return SyntaxTheme(
         linesCountColor: UIColor(hexString: "#37474f", alpha: 0.7),
         backgroundColor: UIColor(hexString: "#fafafa"),
@@ -92,7 +92,7 @@ public struct SyntaxTheme {
        );
      }
     
-    static func ayuDark() -> SyntaxTheme {
+    public func ayuDark() -> SyntaxTheme {
        return SyntaxTheme(
         linesCountColor: UIColor(hexString: "#ffffff", alpha: 0.8),
         backgroundColor: UIColor(hexString: "#202734"),
@@ -109,7 +109,7 @@ public struct SyntaxTheme {
      }
     
     
-    static func gravityLight() -> SyntaxTheme {
+    public func gravityLight() -> SyntaxTheme {
        return SyntaxTheme(
         linesCountColor: UIColor(hexString: "#37474f", alpha: 0.7),
         backgroundColor: UIColor(hexString: "#fafafa"),
@@ -125,7 +125,7 @@ public struct SyntaxTheme {
        );
      }
     
-    static func vsCodeLight() -> SyntaxTheme {
+    public func vsCodeLight() -> SyntaxTheme {
         return SyntaxTheme(
             linesCountColor: UIColor(hexString: "#000000", alpha: 0.7),
             backgroundColor: UIColor(hexString: "#ffffff"),
