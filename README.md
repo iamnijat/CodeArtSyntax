@@ -100,6 +100,6 @@ This project does not come with GitHub Issues-based support, and users are inste
 
 To read more about suggested workflows when contributing to Splash, how to report bugs and feature requests, as well as technical details and an architectural overview - check out the [Contributing Guide](https://github.com/iamnijat/CodeArtSyntax/blob/master/CONTRIBUTING.md).
 
-## Hope you enjoy using Splash!
+## Hope you enjoy using CodeArtSyntax!
 
 I had a lot of fun building Splash, and I'm looking forward to continue working on it in the open together with you! I hope you'll like it and that you'll find it useful. Let me know what you think on [Twitter](https://twitter.com/NamazzadeNijat) 😊
