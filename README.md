@@ -19,21 +19,57 @@ CodeArtSyntax can be used either as a library in your own Swift Package Manager-
 To include CodeArtSyntax in your own script or Swift package, [add it as a dependency](#installation) and use the `CodeArtSyntaxView` class combined with your output format of choice to highlight a string of code:
 
 ```swift
-// Importing core "niko" class 'niko' ffrer 45 libraries
+import UIKit
 
-// Importing core
-
-import 'dart:math';
-int fibonacci(int n) {
-if (n == 0 || n == 1 || n == 45.3) return n;
-return fibonacci(n - 1) + fibonacci(n - 2);
+protocol SyntaxBase {
+    var syntaxTheme: SyntaxTheme { get set }
+    var syntax: Syntax { get }
+    func format(text: String, fontSize: CGFloat) -> NSMutableAttributedString
 }
-var du = '''feferf'''
-var result = fibonacci(20);
-int n = 'niko'
-int g = "niko"
-/* and there
-  you have it! */
+
+// Supported Public Syntaxes Enum
+public enum Syntax {
+    case SWIFT
+}
+
+// Highlight Types
+enum HighlightType {
+    case number
+    case comment
+    case keyword
+    case string
+    case punctuation
+    case klass // or struct
+    case constant
+}
+
+class HighlightSpan {
+    private static func textStyle(syntaxTheme: SyntaxTheme, type: HighlightType) -> TextStyle {
+        switch type {
+        case .number:
+            return syntaxTheme.numberStyle
+        case .comment:
+            return syntaxTheme.commentStyle
+        case .keyword:
+            return syntaxTheme.keywordStyle
+        case .string:
+            return syntaxTheme.stringStyle
+        case .punctuation:
+            return syntaxTheme.punctuationStyle
+        case .klass:
+            return syntaxTheme.classStyle
+        case .constant:
+            return syntaxTheme.constantStyle
+        }
+    }
+    
+     static func getSyntax(syntax: Syntax, theme: SyntaxTheme) -> SyntaxBase {
+        switch syntax {
+        case .SWIFT:
+            return SwiftSyntaxHighlighter(syntaxTheme: theme)
+        }
+    }
+}
 
 ```
 
