@@ -10,17 +10,23 @@ import UIKit
  
 public struct CodeArtSyntaxView: View {
     
-   
+    var code: String
     
-    let code: String
+    var syntax: Syntax
     
-    let syntax: Syntax
+    var withLinesCount: Bool
     
-    let withLinesCount: Bool
+    var syntaxTheme: SyntaxTheme
     
-    let syntaxTheme: SyntaxTheme
+    var fontSize: CGFloat
     
-    let fontSize: CGFloat
+    public init(code: String, syntax: Syntax, withLinesCount: Bool, syntaxTheme: SyntaxTheme, fontSize: CGFloat) {
+        self.code = code
+        self.fontSize = fontSize
+        self.syntax = syntax
+        self.withLinesCount = withLinesCount
+        self.syntaxTheme = syntaxTheme
+    }
     
     
     
@@ -109,8 +115,3 @@ private func getCodeLines(code: String, syntaxTheme: SyntaxTheme, fontSize: CGFl
 
 
 
-struct CodeArtSyntaxView_Previews: PreviewProvider {
-    static var previews: some View {
-        CodeArtSyntaxView(code: "", syntax: .SWIFT, withLinesCount: true, syntaxTheme: SyntaxTheme.vsCodeDark(), fontSize: 13)
-    }
-}
