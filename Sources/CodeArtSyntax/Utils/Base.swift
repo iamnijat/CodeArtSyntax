@@ -23,7 +23,7 @@ enum HighlightType {
 }
 
 class HighlightSpan {
-    private static func textStyle(syntaxTheme: SyntaxTheme, type: HighlightType) -> TextStyle {
+     static func textStyle(syntaxTheme: SyntaxTheme, type: HighlightType) -> TextStyle {
         switch type {
         case .number:
             return syntaxTheme.numberStyle
