@@ -1,11 +1,8 @@
-//
-//  Extension+FirstLetterUppercase.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 26.02.23.
-//
-
 import Foundation
+
+// Extension which can be used to
+// check the string's firstletter
+// is uppercase or not
 
 extension String {
     func firstLetterIsUpperCase() -> Bool {

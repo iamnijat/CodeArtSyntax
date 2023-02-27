@@ -1,23 +1,11 @@
-//
-//  File.swift
-//  
-//
-//  Created by Nijat Namazzade on 26.02.23.
-//
-
 import SwiftUI
-import UIKit
  
 public struct CodeArtSyntaxView: View {
     
     var code: String
-    
     var syntax: Syntax
-    
     var withLinesCount: Bool
-    
     var syntaxTheme: SyntaxTheme
-    
     var fontSize: CGFloat
     
     public init(code: String, syntax: Syntax, withLinesCount: Bool, syntaxTheme: SyntaxTheme, fontSize: CGFloat) {
@@ -28,74 +16,56 @@ public struct CodeArtSyntaxView: View {
         self.syntaxTheme = syntaxTheme
     }
     
-    
-    
- 
     public var body: some View {
+        let backgroundColor = Color(syntaxTheme.backgroundColor)
+        
         VStack {
             ScrollView {
                 HStack(alignment: .top) {
-                    VStack {
-                        ForEach(1..<(code.components(separatedBy: "\n").count + 1), id: \.self) {
-                            number in
-                            CodeLinesView(number: "\(number)", syntaxTheme: syntaxTheme, fontSize: fontSize)
+                    
+                    if withLinesCount {
+                        VStack {
+                            ForEach(1..<(code.components(separatedBy: "\n").count + 1), id: \.self) {
+                                number in
+                                CodeLinesView(number: "\(number)", syntaxTheme: syntaxTheme, fontSize: fontSize)
+                            }
                         }
-                        
-                        
                     }
                     
-                    CodeView(code: code, syntax: syntax, withLinesCount: withLinesCount, syntaxTheme: syntaxTheme, fontSize: fontSize)
+                    CodeView(code: code, syntax: syntax, syntaxTheme: syntaxTheme, fontSize: fontSize)
                    
                 }}.padding(15)
-            
-            
-            
-            
         }
-        .background(Color(syntaxTheme.backgroundColor))
-        
-
+        .background(backgroundColor)
     }
-    
-    
 }
 
 
-struct CodeLinesView: View {
+private struct CodeLinesView: View {
     
     let number: String
-    
     let syntaxTheme: SyntaxTheme
-    
     let fontSize: CGFloat
     
  
     var body: some View {
         Text(AttributedString(getCodeLines(code: number, syntaxTheme: syntaxTheme, fontSize: fontSize)))
-        
-
     }
     
    
   
 }
 
-struct CodeView: View {
+private struct CodeView: View {
     
     let code: String
-    
     let syntax: Syntax
-    
-    let withLinesCount: Bool
-    
     let syntaxTheme: SyntaxTheme
-    
     let fontSize: CGFloat
-    
  
     var body: some View {
         Text(AttributedString(
-            getSyntax(syntax: .SWIFT, theme: syntaxTheme).format(text: code, fontSize: fontSize))
+            HighlightSpan.getSyntax(syntax: .SWIFT, theme: syntaxTheme).format(text: code, fontSize: fontSize))
             )
         
 

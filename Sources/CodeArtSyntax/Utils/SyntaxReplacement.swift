@@ -1,13 +1,4 @@
-//
-//  SyntaxReplacement.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 26.02.23.
-//
-
 import Foundation
-
-
 
 struct SyntaxReplacement {
     
@@ -16,7 +7,6 @@ struct SyntaxReplacement {
     let syntaxRegex = SyntaxRegex.syntaxRegex(syntax: syntax)
         
        return [
-  
         syntaxRegex.intValuePattern: syntaxTheme.numberStyle,
         syntaxRegex.doubleValuePattern: syntaxTheme.numberStyle,
         syntaxRegex.metaDataPattern: syntaxTheme.keywordStyle,

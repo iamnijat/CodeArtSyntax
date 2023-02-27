@@ -1,13 +1,9 @@
-//
-//  Extension+UIColor.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 25.02.23.
-//
-
-
-import Foundation
 import UIKit
+
+// Extension which can be used in order
+// to convert hecadecimal color to UIColor
+// which could be accesible in SwiftUI
+
 extension UIColor {
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)

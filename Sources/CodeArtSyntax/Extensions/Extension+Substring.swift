@@ -1,11 +1,8 @@
-//
-//  Extension+Substring.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 26.02.23.
-//
-
 import Foundation
+
+// Extension which can be used in order
+// to implement additional substring functionality
+// for the string
 
 extension String {
     func substring(from: Int, to: Int) -> String {

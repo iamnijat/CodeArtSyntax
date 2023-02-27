@@ -1,12 +1,4 @@
-//
-//  Base.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 11.01.23.
-//
-
-import Foundation
-import SwiftUI
+import UIKit
 
 protocol SyntaxBase {
     var syntaxTheme: SyntaxTheme { get set }
@@ -14,10 +6,12 @@ protocol SyntaxBase {
     func format(text: String, fontSize: CGFloat) -> NSMutableAttributedString
 }
 
+// Supported Public Syntaxes Enum
 public enum Syntax {
     case SWIFT
 }
 
+// Highlight Types
 enum HighlightType {
     case number
     case comment
@@ -29,8 +23,7 @@ enum HighlightType {
 }
 
 class HighlightSpan {
-    
-    func textStyle(syntaxTheme: SyntaxTheme, type: HighlightType) -> TextStyle {
+    private static func textStyle(syntaxTheme: SyntaxTheme, type: HighlightType) -> TextStyle {
         switch type {
         case .number:
             return syntaxTheme.numberStyle
@@ -47,19 +40,17 @@ class HighlightSpan {
         case .constant:
             return syntaxTheme.constantStyle
         }
-        
     }
     
+     static func getSyntax(syntax: Syntax, theme: SyntaxTheme) -> SyntaxBase {
+        switch syntax {
+        case .SWIFT:
+            return SwiftSyntaxHighlighter(syntaxTheme: theme)
+        }
+    }
 }
 
 
-func getSyntax(syntax: Syntax, theme: SyntaxTheme) -> SyntaxBase {
-    switch syntax {
-    case .SWIFT:
-        return SwiftSyntaxHighlighter(syntaxTheme: theme)
-    }
-    
-}
   
 
 

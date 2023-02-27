@@ -1,11 +1,4 @@
-//
-//  SwiftSyntaxHighlighter.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 26.02.23.
-//
-
-import SwiftUI
+import UIKit
 
 
 class SwiftSyntaxHighlighter: SyntaxBase {
@@ -14,32 +7,32 @@ class SwiftSyntaxHighlighter: SyntaxBase {
     var syntax: Syntax = Syntax.SWIFT
     
     init(syntaxTheme: SyntaxTheme) {
-            self.syntaxTheme = syntaxTheme
+        self.syntaxTheme = syntaxTheme
     }
     
     func format(text: String, fontSize: CGFloat) -> NSMutableAttributedString {
         let font = UIFont.systemFont(ofSize: fontSize)
-        
-        
+
         let attributes: [NSMutableAttributedString.Key:Any] = [.font:font, .foregroundColor: syntaxTheme.baseColor]
 
         let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
         
         for (pattern, attributes) in SyntaxReplacement.replacements(syntaxTheme: syntaxTheme, syntax: syntax){
+            
             do{
+                
                 let regex = try NSRegularExpression(pattern: pattern)
                 let range = NSRange(text.startIndex...,in:text)
                 regex.enumerateMatches(in: text, range: range) {
+                    
                     match, flags, stop in
                     if let matchRange = match?.range(at: 0) {
-                        let matchedText = String(text[Range(matchRange, in: text)!])
-                       
-                       
-                       
-                      
-                        if pattern == #"\w+"#  {
                         
-                            
+                        let matchedText = String(text[Range(matchRange, in: text)!])
+                        let wordPattern = SyntaxRegex.syntaxRegex(syntax: syntax).wordPattern
+                      
+                        if pattern == wordPattern  {
+                        
                             if keywords.contains(matchedText)  {
                                 attributedString.addAttributes(syntaxTheme.keywordStyle, range: matchRange)
                             }
@@ -60,9 +53,8 @@ class SwiftSyntaxHighlighter: SyntaxBase {
                         
                         else {
 
-                                attributedString.addAttributes(attributes, range: matchRange)
-
-
+                            attributedString.addAttributes(attributes, range: matchRange)
+                            
                         }
                         
                     }
@@ -72,10 +64,7 @@ class SwiftSyntaxHighlighter: SyntaxBase {
                 print(error.localizedDescription)
             }
         }
-        
-       
-        
-        
+
         return attributedString
     }
     

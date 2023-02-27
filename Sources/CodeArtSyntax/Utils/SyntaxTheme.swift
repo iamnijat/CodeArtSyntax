@@ -1,12 +1,4 @@
-//
-//  SyntaxTheme.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 14.01.23.
-//
-
-
-import SwiftUI
+import UIKit
 
 public struct SyntaxTheme {
     let linesCountColor: UIColor
@@ -140,15 +132,7 @@ public struct SyntaxTheme {
             constantStyle: [NSMutableAttributedString.Key.foregroundColor : UIColor(hexString: "#0070c1")]
            
         )
-        
     }
-    
-    
-    
-   
-    
-   
-   
     
 }
 

@@ -1,12 +1,4 @@
-//
-//  SyntaxRegex.swift
-//  CodeSyntax
-//
-//  Created by Nijat Namazzade on 26.02.23.
-//
-
 import Foundation
-
 
 struct SyntaxRegex {
     
@@ -30,67 +22,28 @@ struct SyntaxRegex {
 
 
     static func syntaxRegex(syntax: Syntax) -> SyntaxRegex {
-//        switch syntax {
-//        case .SWIFT:
-//        return SyntaxRegex(
-//                intValuePattern: "\\d+",
-//                htmlTagPattern: "(<([^>]+)>)",
-//                stringValuePattern: "string",
-//                multilineCommentsPattern: "/\\*+[^*]*\\*+(?:[^/*][^*]*\\*+)*/",
-//                singleLineCommentsPattern: "[/]+.*"
-//            )
-//        case .DART:
-//        return SyntaxRegex(
-//                intValuePattern: "\\d+",
-//                htmlTagPattern: "(<([^>]+)>)",
-//                stringValuePattern: "string",
-//                multilineCommentsPattern: "/\\*+[^*]*\\*+(?:[^/*][^*]*\\*+)*/",
-//                singleLineCommentsPattern: "[/]+.*"
-//            )
-//        case .JAVA:
-//        return SyntaxRegex(
-//                intValuePattern: "\\d+",
-//                htmlTagPattern: "(<([^>]+)>)",
-//                stringValuePattern: "string",
-//                multilineCommentsPattern: "/\\*+[^*]*\\*+(?:[^/*][^*]*\\*+)*/",
-//                singleLineCommentsPattern: "[/]+.*"
-//            )
-//        }
-//
-//        return SyntaxRegex(
-//            intValuePattern: "\\d+",
-//            htmlTagPattern: "(<([^>]+)>)",
-//            doubleValuePattern: "\\d+\\.\\d+",
-//            multilineCommentsPattern: "/\\*+[^*]*\\*+(?:[^/*][^*]*\\*+)*/",
-//            singleLineCommentsPattern: "[/]+.*",
-//            metaDataPattern: "@\\w+",
-//            rawStringWithSingleQuotesValuePattern: "\'(.*)\'",
-//            rawStringWithDoubleQuotesValuePattern: "\"(.*)\"",
-//            multiLineStringWithSingleQuotesValuePattern: #"'''(?:[^'\\]|\\(.|\n))*'''",
-//            multiLineStringWithDoubleQuotesValuePattern: #""""(?:[^"\\]|\\(.|\n))*"""""#
-//        )
-        //(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)
-        
-        
-        return SyntaxRegex(
-            intValuePattern: "\\d+",
-            htmlTagPattern: "(<([^>]+)>)",
-            doubleValuePattern: #"\d+\.\d+"#,
-            multilineCommentsPattern: "(/\\*+[^*]*\\*+(?:[^/*][^*]*\\*+)*/)",
-            singleLineCommentsPattern: #"\/\/[^\n\r]+?(?:\*\)|[\n\r])"#,
-            metaDataPattern: "@\\w+",
-            commentBlockStartPattern: "/\\*",
-            commentBlockEndPattern: "\\*/",
-            commentLineStartPattern: "//",
-            stringWithSingleQuotesValuePattern: #"'(?:[^'\\]|\\.)*'"#,
-            stringWithDoubleQuotesValuePattern: #""(?:[^"\\]|\\.)*""#,
-            rawStringWithSingleQuotesValuePattern: #"'(.*)'"#,
-            rawStringWithDoubleQuotesValuePattern: #""(.*)""#,
-            multiLineStringWithSingleQuotesValuePattern: #"'''(?:[^'\\]|\\(.|\n))*'''"#,
-            multiLineStringWithDoubleQuotesValuePattern: #""""(?:[^"\\]|\\(.|\n))*"""""#,
-            punctuationPattern: #"[\[\]{}().!=<>&\|\?\+\-\*/%\^~;:,]"#,
-            wordPattern: #"\w+"#
-        )
+        switch syntax {
+        case .SWIFT:
+            return SyntaxRegex(
+                intValuePattern: "\\d+",
+                htmlTagPattern: "(<([^>]+)>)",
+                doubleValuePattern: #"\d+\.\d+"#,
+                multilineCommentsPattern: "(/\\*+[^*]*\\*+(?:[^/*][^*]*\\*+)*/)",
+                singleLineCommentsPattern: #"\/\/[^\n\r]+?(?:\*\)|[\n\r])"#,
+                metaDataPattern: "@\\w+",
+                commentBlockStartPattern: "/\\*",
+                commentBlockEndPattern: "\\*/",
+                commentLineStartPattern: "//",
+                stringWithSingleQuotesValuePattern: #"'(?:[^'\\]|\\.)*'"#,
+                stringWithDoubleQuotesValuePattern: #""(?:[^"\\]|\\.)*""#,
+                rawStringWithSingleQuotesValuePattern: #"'(.*)'"#,
+                rawStringWithDoubleQuotesValuePattern: #""(.*)""#,
+                multiLineStringWithSingleQuotesValuePattern: #"'''(?:[^'\\]|\\(.|\n))*'''"#,
+                multiLineStringWithDoubleQuotesValuePattern: #""""(?:[^"\\]|\\(.|\n))*"""""#,
+                punctuationPattern: #"[\[\]{}().!=<>&\|\?\+\-\*/%\^~;:,]"#,
+                wordPattern: #"\w+"#
+            )
+        }
     }
     
 }
