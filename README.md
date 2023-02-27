@@ -8,6 +8,11 @@
 
 # Swift CodeArtSyntax Package
 
+<p align="center">
+    <img src="Images/sample_screenshot.png" width="90%" max-width="90%" alt="CodeArtSyntax" />
+</p>
+
+
 Welcome to **CodeArtSyntax** - lightweight and flexible Swift syntax highlighter. It can be used to generate Swift code for your project (in the future it will support multiple programming languages), to turn a string of Swift code into a fully syntax highlighted image, or to build custom developer tools.
 
 ## Usage
