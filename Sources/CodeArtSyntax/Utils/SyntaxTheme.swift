@@ -1,6 +1,7 @@
 import UIKit
 
 public struct SyntaxTheme {
+    
     let linesCountColor: UIColor
     let backgroundColor: UIColor
     let baseColor: UIColor
@@ -12,8 +13,6 @@ public struct SyntaxTheme {
     let punctuationStyle: TextStyle
     let classStyle: TextStyle
     let constantStyle: TextStyle
-    
-
     
     public static func vsCodeDark() -> SyntaxTheme {
         return SyntaxTheme(

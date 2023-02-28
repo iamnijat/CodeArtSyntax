@@ -41,7 +41,7 @@ public struct CodeArtSyntaxView: View {
 }
 
 
-private struct CodeLinesView: View {
+ private struct CodeLinesView: View {
     
     let number: String
     let syntaxTheme: SyntaxTheme
