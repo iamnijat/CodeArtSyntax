@@ -101,10 +101,10 @@ To configure CodeArtSyntax in your project you can easily copy-paste this code b
 
 ## Contributions and support
 
-Splash is developed completely in the open, and your contributions are more than welcome. It's still a very new project, so I'm sure there are bugs to be found and improvements to be made - and hopefully we can work on those together as a community.
+CodeArtSyntax is developed completely in the open, and your contributions are more than welcome. It's still a very new project, so I'm sure there are bugs to be found and improvements to be made - and hopefully we can work on those together as a community.
 
 This project does not come with GitHub Issues-based support, and users are instead encouraged to become active participants in its continued development — by fixing any bugs that they encounter, or by improving the documentation wherever it's found to be lacking.
 
 ## Hope you enjoy using CodeArtSyntax!
 
-I had a lot of fun building Splash, and I'm looking forward to continue working on it in the open together with you! I hope you'll like it and that you'll find it useful. Let me know what you think on [Twitter](https://twitter.com/NamazzadeNijat) 😊
+I had a lot of fun building CodeArtSyntax, and I'm looking forward to continue working on it in the open together with you! I hope you'll like it and that you'll find it useful. Let me know what you think on [Twitter](https://twitter.com/NamazzadeNijat) 😊
