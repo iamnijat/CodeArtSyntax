@@ -1,6 +1,5 @@
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 [![GitHub version](https://img.shields.io/github/v/release/iamnijat/CodeArtSyntax?sort=semver)](https://github.com/iamnijat/CodeArtSyntax/releases)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-brightgreen)](http://cocoapods.org/)
 [![License](https://img.shields.io/github/license/iamnijat/CodeArtSyntax)](https://github.com/iamnijat/CodeArtSyntax/blob/main/LICENSE.txt)
 [![Issues](https://img.shields.io/github/issues/iamnijat/CodeArtSyntax)](https://github.com/iamnijat/CodeArtSyntax/issues)
 ![GitHub forks](https://img.shields.io/github/forks/iamnijat/CodeArtSyntax)
